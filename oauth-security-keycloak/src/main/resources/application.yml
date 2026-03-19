@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          my-spring-oauth2-app:
+            client-id: my-spring-oauth2-app
+            client-secret: urN7l0k9uvKI7Yh6A59UprU0k7tSY9PB
+            scope: openid, profile, email
+            authorization-grant-type: authorization_code
+            redirect-uri: https://glorious-doodle-5g5jgp7jj996354v-8081.app.github.dev/login/oauth2/code/my-spring-oauth2-app
+        provider:
+          my-spring-oauth2-app:
+            issuer-uri: https://glorious-doodle-5g5jgp7jj996354v-8080.app.github.dev/realms/Oauth-demo
+
+      resourceserver:
+        jwt:
+          issuer-uri: https://glorious-doodle-5g5jgp7jj996354v-8080.app.github.dev/realms/Oauth-demo
